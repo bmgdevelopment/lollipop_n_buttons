@@ -1,0 +1,60 @@
+/* .field targets the label and input text area of the submission form */
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+/* .label targets the labels above the input fields of the form */
+.label {
+    font-size: 16px;
+}
+
+/* .button targets submit button */
+.button {
+    margin-top: .25rem;
+    margin-left: 3rem;
+    margin-bottom: 2rem;
+    padding: 0.25rem;
+    background-color: rgb(227, 72, 209);
+    color: lightgoldenrodyellow;
+    font-size: 1rem;
+}
+
+/*ul as the parent and all li as the children  */
+ul {
+    /* margin-left: .5rem; */
+    margin-right: 3rem;
+    margin-top: 0px;
+}
+
+/* li is targeted and the background color alternate due to odd/even placement */
+ul li:nth-child(even){
+    background: white; 
+    border: 1px solid rgba(128, 128, 128, 0.2);;
+}
+ul li:nth-child(odd){
+    /* border: 2px solid rgb(0, 255, 217); */
+    background: rgba(128, 128, 128, 0.2);
+}
+
+li {
+    display: flex;
+    flex-direction: row; /*aligns on main x axis (horizontal)*/
+    justify-content: space-between; /*pushes text and button to opposite end*/
+    align-items: center; /*aligns on y axis (vertical)*/
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 1rem;
+}
+
+/* .request__delete targets the delete button within all li */
+.request__delete {
+    background-color: rgb(72, 85, 227);
+    color: lightgoldenrodyellow;
+    font-size: 1rem;
+}

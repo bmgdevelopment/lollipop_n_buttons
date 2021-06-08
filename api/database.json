@@ -1,0 +1,35 @@
+{
+  "clowns": [
+    {
+      "id": 1,
+      "name": "Lollipop"
+    },
+    {
+      "id": 2,
+      "name": "Buttons"
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "clownId": 1,
+      "parentName": "Robin Gill",
+      "childName": "Susan",
+      "totalChildren": 8,
+      "address": "1092 Hileip Ave",
+      "date": "2021-06-12",
+      "partyHours": 2
+    },
+    {
+      "id": 2,
+      "clownId": 2,
+      "parentName": "William Jilinok",
+      "childName": "Rich",
+      "totalChildren": 17,
+      "address": "7803 Sumpter Ave",
+      "date": "2021-06-28",
+      "partyHours": 4
+    }
+  ],
+  "applicationSate": []
+}
