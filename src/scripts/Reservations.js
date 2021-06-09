@@ -1,21 +1,20 @@
-import { getRequests, deleteRequest } from './dataAccess.js';
+import { getRequests, deleteRequest, getClowns } from './dataAccess.js';
 
 export const Requests = () => {
   const requests = getRequests();
-  // const clowns = getClowns();
-
+  const clowns = getClowns();
 
   let html= `
     <ul class="all__requests">
     ${requests.map(request => {
 
-    // const foundClown = clowns.find(
-    //   (clown) => {
-    //     return clown.id === request.clownId;
-    //   });
+    const foundClown = clowns.find(
+      (clown) => {
+        return clown.id === request.clownId;
+      });
 
     return `<li class="request">
-        🎈 ...clown name... will attend a birthday party for ${request.childName} on ${request.date}
+        🎈 ${foundClown.name} will attend a birthday party for ${request.childName} on ${request.date}
         <button class='request__delete' id="request--${request.id}">
         Delete
         </button> 

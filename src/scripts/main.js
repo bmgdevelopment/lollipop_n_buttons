@@ -1,16 +1,18 @@
 /* eslint-disable no-console */
 import { Buttons_n_Lollipop } from './Buttons-n-Lollipop.js';
-import { fetchRequests } from './dataAccess.js';
+import { fetchClowns, fetchRequests } from './dataAccess.js';
 
 const mainContainer = document.querySelector('#container');
 
 const render = () => {
-  fetchRequests().then(
-    // fetchClowns().then(
+  fetchClowns().then( 
     () => {
-      mainContainer.innerHTML = Buttons_n_Lollipop();
-    }
-  );
+      fetchRequests().then(
+        () => {
+          mainContainer.innerHTML = Buttons_n_Lollipop();
+        }
+      );
+    });
 };
 
 render();

@@ -1,7 +1,16 @@
 import { sendRequest } from './dataAccess.js';
+import { Clowns } from './Clowns.js';
 
-// const clowns = getClowns();
+
 const mainContainer = document.querySelector('#container');
+
+let clownIdMatch;
+
+document.addEventListener('change', e => {
+  if (e.target.name === 'clown') {
+    clownIdMatch = parseInt(e.target.value);
+  }
+});
 
 mainContainer.addEventListener('click', clickEvent => {
   if (clickEvent.target.id === 'submitReservation') {
@@ -20,7 +29,7 @@ mainContainer.addEventListener('click', clickEvent => {
       address: userAddress,
       date: userPartyDate,
       partyHours: userPartyHours,
-      // clownId: userClownChoice
+      clownId: clownIdMatch
     };
 
     sendRequest(datatoSendToAPI);
@@ -56,8 +65,7 @@ export const ServiceForm = () => {
 <div class="field">
     <label class="label" for=""><b>Which clown would you prefer?</b></label>
     <div class="clown__div">
-    <p><input type="radio" name="clown" id="clown lollipop"/>🍭Miss Lollipop</p>       
-    <p><input type="radio" name="clown" id="clown buttons"/>🤡Mr. Buttons</p>       
+    ${Clowns()}
     </div>
     </div>
     
@@ -66,9 +74,6 @@ export const ServiceForm = () => {
   return html;
 };
   
-//   ${clowns.map(clown => {
-//   return `
-//   <input type="radio" name="clown" id="${clown.name}" value="${clown.id}"/>${clown.name}        
-//       `;
-// }).join('')
-// }
+
+// <p><input type="radio" name="clown" id="clown lollipop"/>🍭Miss Lollipop</p>       
+// <p><input type="radio" name="clown" id="clown buttons"/>🤡Mr. Buttons</p> 
