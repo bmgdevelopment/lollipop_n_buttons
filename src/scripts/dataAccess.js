@@ -3,7 +3,6 @@ const API = 'http://localhost:8080'; //in API terminal window: json-server datab
 const mainContainer = document.querySelector('#container');
 
 
-
 export const fetchRequests = () => {
   return fetch(`${API}/reservations`)
     .then(response => response.json()) //response.json() will take the response and convert it to a JavaScript object
@@ -36,11 +35,6 @@ export const fetchClowns = () => {
 export const getClowns = () => {
     return clownArray;
 }
-
-
-// export const getClowns = () => {
-//     return clownArray.map(clown => ({...clown}))
-// };
 
 export const sendRequest = (userServiceRequest) => {
     const fetchOptions = {

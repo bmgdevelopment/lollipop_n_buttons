@@ -6,7 +6,7 @@ export const Requests = () => {
   const clowns = getClowns();
 
   // ⏰ SORT DATES OF REQUESTS
-  const sortedRequests = requests.sort((a,b) => {
+  let sortedRequests = requests.sort((a,b) => {
     if (a.date > b.date) {
       return 1;
     } 
@@ -16,11 +16,9 @@ export const Requests = () => {
     return 0;
   }); 
 
-  console.log(sortedRequests);
-
   let html= `
     <ul class="all__requests">
-    ${requests.map(request => {
+    ${sortedRequests.map(request => {
 
     const foundClown = clowns.find(
       (clown) => {

@@ -19,6 +19,10 @@ h1,h2,h3,h4,h5,h6 {
   margin-left: 3rem;
 }
 
+h1 {
+	padding-top: 2%;
+}
+
 .h2__font {
 	font-size: 26px;
 	margin-top: 0px;
