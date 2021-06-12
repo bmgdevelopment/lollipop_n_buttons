@@ -58,3 +58,9 @@ li {
     color: lightgoldenrodyellow;
     font-size: 1rem;
 }
+.request__deny {
+    background-color: rgb(227, 72, 72);
+    color: lightgoldenrodyellow;
+    font-size: 1rem;
+    margin-right: -200px;
+}

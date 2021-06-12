@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { sendRequest } from './dataAccess.js';
 import { Clowns } from './Clowns.js';
 
@@ -32,7 +33,12 @@ mainContainer.addEventListener('click', clickEvent => {
       clownId: clownIdMatch
     };
 
-    sendRequest(datatoSendToAPI);
+    if (userParent.length > 0 && userChild.length > 0 && userAddress.length > 0 && userPartyDate.length > 0 && userTotalChildren > 0 && userPartyHours > 0 && clownIdMatch > 0) {
+      sendRequest(datatoSendToAPI);
+    } else {
+      console.log('User must submit all fields to submit reservation successfully.');
+      alert('Oh no! We didn\'t receive your reservation! 🤡 Please complete all required fields to submit your reservation successfully! 🎈');
+    }
   }
 });
 
@@ -75,5 +81,5 @@ export const ServiceForm = () => {
 };
   
 
-// <p><input type="radio" name="clown" id="clown lollipop"/>🍭Miss Lollipop</p>       
-// <p><input type="radio" name="clown" id="clown buttons"/>🤡Mr. Buttons</p> 
+// <p><input type="radio" name="clown" id="clown lollipop"/> 🍭 Miss Lollipop</p>       
+// <p><input type="radio" name="clown" id="clown buttons"/> 🤡 Mr. Buttons</p> 

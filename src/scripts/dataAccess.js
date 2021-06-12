@@ -1,5 +1,5 @@
 const applicationState = {};
-const API = 'http://localhost:8088';
+const API = 'http://localhost:8080'; //in API terminal window: json-server database.json -p 8088 -w
 const mainContainer = document.querySelector('#container');
 
 
