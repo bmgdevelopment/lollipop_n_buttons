@@ -1,7 +1,8 @@
 const applicationState = {};
-const API = 'http://localhost:8080'; //in API terminal window: json-server database.json -p 8088 -w
+const API = 'http://localhost:8080'; //in API terminal window: json-server database.json -p 8080 -w
 const mainContainer = document.querySelector('#container');
 
+//****** FETCH REQUESTS AND GET REQUESTS AS AN JAVASCRIPT ARRAY *********
 
 export const fetchRequests = () => {
   return fetch(`${API}/reservations`)
@@ -17,6 +18,7 @@ export const getRequests = () => {
     return applicationState.requests.map(request => ({...request}))
 };
 
+//****** FETCH CLOWNS AND GET CLOWNS AS AN JAVASCRIPT ARRAY *********
 let clownArray;
 
 export const fetchClowns = () => {
@@ -35,6 +37,8 @@ export const fetchClowns = () => {
 export const getClowns = () => {
     return clownArray;
 }
+
+
 
 export const sendRequest = (userServiceRequest) => {
     const fetchOptions = {
